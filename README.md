@@ -6,8 +6,8 @@ Hence, our website contains list of digital currencies such as Bitcoin, Ethereum
 
 ## Features
 
-- List of Crytocurrencies using Coingecko API
-- Plotting graphs of recommended cryptocurrencies using CryptoCompare API
+- List of Crytocurrencies using [Coingecko API](https://www.coingecko.com/en/api)
+- Plotting graphs of recommended cryptocurrencies using [CryptoCompare API](https://min-api.cryptocompare.com/)
 - Tutorials to learn Cryptotrading
 - Testimonials
 - Mock purchase of Cryptocurrency
