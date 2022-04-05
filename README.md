@@ -15,4 +15,6 @@ Hence, our website contains list of digital currencies such as Bitcoin, Ethereum
 
 ## Contributors
 
-[@rbsuchetas], [@avinash770], [@tanyaagarwal02]
+- [@rbsuchetas](https://github.com/rbsuchetas) 
+- [@avinash770](https://github.com/avinash770)
+- [@tanyaagarwal02](https://github.com/tanyaagarwal02)
