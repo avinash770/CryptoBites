@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="content">
+        <div class="single">
+
+            <body>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="#">{% if user.is_authenticated %}
+                        <h2>Welcome {{ user.username }}</h2>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <h2>Welcome New User</h2>
+                        <a href="{% url 'login' %}">(Already have an account? - Login)</a><br>
+                    {% endif %}</a>
+
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex ms-auto">
+                            <input class="form-control me-2" type="search" placeholder="Search Crypto"
+                                   aria-label="Search"
+                                   id="myInput">
+
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <h5><i>"CyptoBites strives to provide accurate, timely, and unbiased data for crypto assets."</i></h5><br>
+            <section>
+                <div class="container py-5">
+                    <div class="table-responsive text-white">
+                        <table class="table table-striped text-center table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Symbol</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Current Price (CAD)</th>
+                                <th scope="col">Market Capital</th>
+                                <th scope="col">Buy Now</th>
+                            </tr>
+                            </thead>
+                            <tbody id="myTable">
+                            {% for i in apidata %}
+                                <tr>
+                                    <td><h5 style="color: rgb(0, 255, 229);">{{ i.name }}</h5></td>
+                                    <td>{{ i.symbol }}</td>
+                                    <td class="text-center"><img src="{{ i.image }}"></td>
+                                    <td style="color:greenyellow;">$ {{ i.current_price }}</td>
+                                    <td style="color:rgb(73, 73, 242);">{{ i.market_cap }}</td>
+                                    <td class="text-center"><a href="{% url 'order' %}"><img
+                                            src="{% static 'img/buy.png' %}"
+                                            width="10px" height="10px"
+                                            alt="Buy Now"></a></td>
+
+
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <footer class="fixed-bottom py-2" style="background-color: black !important;">
+                <p class="text-white text-center mb-0">Developed by Group 2</p>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+                    crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#myInput").on("keyup", function () {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function () {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+
+            </body>
+
+        </div>
+    </main>
+
+{% endblock body %}

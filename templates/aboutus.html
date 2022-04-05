@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <main class="content">
+        <div class="single">
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin: 0;
+                }
+
+                html {
+                    box-sizing: border-box;
+                }
+
+                *, *:before, *:after {
+                    box-sizing: inherit;
+                }
+
+                .column {
+                    float: left;
+                    width: 25%;
+                    height: 15%;
+                    margin-bottom: 16px;
+                    padding: 0 8px;
+                }
+
+                .card {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    margin: 8px;
+                }
+
+                .about-section {
+                    padding: 50px;
+                    text-align: center;
+                    background-color: #474e5d;
+                    color: white;
+                }
+
+                .container {
+                    padding: 0 16px;
+                }
+
+                .container::after, .row::after {
+                    content: "";
+                    clear: both;
+                    display: table;
+                }
+
+                .title {
+                    color: #000000;
+                    text-align: center;
+                    font-style: oblique;
+                }
+
+                @media screen and (max-width: 650px) {
+                    .column {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            </style>
+
+            <div class="about-section">
+                <h1>About Us Page</h1>
+                <p>CyptoBites strives to provide accurate, timely, and unbiased data for crypto assets.</p>
+                <p>This is a web application for the data related to cryptocurrency. Our view is that the user can know
+                    what the current price of crypto currency is and can draw conclusions accordingly. </p>
+            </div>
+
+            <br>
+            <br>
+
+            <h2 style="text-align:center"> Meet Our Team</h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+
+{#                        <img src="https://ibb.co/C0Fv0TZ" alt="Avinash" style="width:100%">#}
+
+                        <div class="container">
+                            <h3 class="title">Avinash Gupta</h3>
+                            <p class="title"> Master of Applied Computing student </p>
+                            <p class="title">gupta35@uwindsor.ca</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+{#                        <img src="https://i.ibb.co/Q8DmxQ4/tanya.png" >#}
+                        <div class="container">
+                            <h3 class="title">Tanya Agarwal</h3>
+                            <p class="title">Master of Applied Computing student</p>
+                            <p class="title">agarwalt@uwindsor.ca</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+{#                        <img src="https://ibb.co/dBVNmtD" alt="Rahul" style="width:100%">#}
+                        <div class="container">
+                            <h3 class="title">Rahul Banerjee</h3>
+                            <p class="title">Master of Applied Computing student</p>
+                            <p class="title">banerjer@uwindsor.ca</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+{#                        <img src="img/tanya.png" alt="Yashvi" style="width:100%">#}
+                        <div class="container">
+                            <h3 class="title">Yashvi Shah</h3>
+                            <p class="title">Master of Applied Computing student</p>
+                            <p class="title">shah4l@uwindsor.ca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+{% endblock body %}

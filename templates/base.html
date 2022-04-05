@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CryptoBites</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-color: #212529;
+            color: white;
+        }
+
+        * {
+            color: white;
+        }
+
+        img {
+            height: 4rem;
+            width: 4rem;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="header">
+
+        <figure class="logo"><a href="/"><img src="{% static 'img/logo.png' %}" width="50px" height="60px"
+                                              alt="Logo"></a></figure>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="http://127.0.0.1:8000/">Home</a></li>
+                <li><a href="{% url 'recommendation' %}">Recommendations</a>
+                </li>
+                <li><a href="{% url 'tutorial' %}">Tutorials</a>
+                </li>
+                <li><a href="{% url 'testimonial' %}">Testimonials</a>
+                </li>
+                <li><a href="{% url 'order' %}">Buy Coins</a>
+                </li>
+                <li><a href="{% url 'register' %}">Register</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <br>
+    <br><br>
+    <br>
+
+
+    {% block body %}
+
+    {% endblock body %}
+
+    <footer class="footer">
+        <div class="copyright"><p>Internet Applications - Group 2 Project</p></div>
+        <div class="footermenu">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="https://github.com/avinash770">GitHub Source Code</a></li>
+                <li><a href="{% url 'aboutus' %}">About Us</a></li>
+            </ul>
+        </div>
+        <div class="tags">
+        </div>
+
+    </footer>
+
+
+</div>
+</body>
+</html>

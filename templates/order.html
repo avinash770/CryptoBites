@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="content">
+        <div class="single">
+
+            <h1>Order a Coin</h1>
+            <h2> {{ note }}</h2>
+            <form action="{% url 'order' %}" method="post">
+                {% csrf_token %}
+                <table>{{ buycoinsform.as_table }}</table>
+                <input type="submit" value="Place Order">
+            </form>
+
+
+        </div>
+    </main>
+
+{% endblock body %}

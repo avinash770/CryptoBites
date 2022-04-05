@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+</head>
+<body>
+<div id="bg"></div>
+<main class="content">
+    <div class="single">
+
+        <h1>Registration Page!</h1>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            {% if form.errors %}
+                <p>There are errors in the form!</p>
+            {% endif %}
+
+            {{ form }}
+
+            <div class="form-field">
+                <input class="btn" type="submit" value="Register">
+            </div>
+
+        </form>
+
+    </div>
+</main>
+</body>
+</html>

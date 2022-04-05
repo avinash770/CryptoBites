@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <main class="content">
+        <div class="single">
+
+            <h1 align="center">What does our YouTube community has to say about cryptography?</h1><br>
+            {% if data %}
+
+                <div align="center">
+                {% for st in data %}
+
+                    <p>{{ st.title }}</p>
+                        <iframe width="80%" height="400" src="{{ st.youtubeLink }}" frameborder="0"
+                                allowfullscreen></iframe>
+                    <br><br>
+
+                {% endfor %}
+            {% else %}
+                <h1>No Data</h1>
+            {% endif %}
+        </div>
+
+
+        </div>
+    </main>
+
+{% endblock body %}
