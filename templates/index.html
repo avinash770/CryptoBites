@@ -40,9 +40,9 @@
             <section>
                 <div class="container py-5">
                     <div class="table-responsive text-white">
-                        <table class="table table-striped text-center table-hover table-bordered">
+                        <table class="table table-striped text-center table-hover table-bordered" >
                             <thead>
-                            <tr>
+                            <tr style="color:#ffffff;">
                                 <th scope="col">Name</th>
                                 <th scope="col">Symbol</th>
                                 <th scope="col">Image</th>
@@ -55,7 +55,7 @@
                             {% for i in apidata %}
                                 <tr>
                                     <td><h5 style="color: rgb(0, 255, 229);">{{ i.name }}</h5></td>
-                                    <td>{{ i.symbol }}</td>
+                                    <td style="color:#ffffff;">{{ i.symbol }}</td>
                                     <td class="text-center"><img src="{{ i.image }}"></td>
                                     <td style="color:greenyellow;">$ {{ i.current_price }}</td>
                                     <td style="color:rgb(73, 73, 242);">{{ i.market_cap }}</td>

@@ -20,8 +20,8 @@ body {
 }
 
 .testcontent {
-  max-width: 500px;
-  margin: auto;
+    max-width: 500px;
+    margin: auto;
     align-content: center;
     alignment: center;
     align-items: center;
@@ -814,6 +814,11 @@ p {
     padding: 10px 0;
 }
 
+.text-black {
+    --tw-text-opacity: 1;
+    color: black;
+}
+
 .error {
     float: left;
     width: 100%;
@@ -989,3 +994,4 @@ p {
         float: none;
     }
 }
+

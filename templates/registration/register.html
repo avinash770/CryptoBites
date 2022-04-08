@@ -19,15 +19,23 @@
                 <p>There are errors in the form!</p>
             {% endif %}
 
-            {{ form }}
+            <div style="color:#ffffff;">
+                {{ form }}
+            </div>
 
             <div class="form-field">
                 <input class="btn" type="submit" value="Register">
             </div>
 
+            <a href="{% url 'index' %}"><h3 style="color:#ffffff;" align="center">Not sure you want to register? Go to HomePage</h3></a>
+
         </form>
 
+
+
     </div>
+
+
 </main>
 </body>
 </html>

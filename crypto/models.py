@@ -18,7 +18,7 @@ class Recommended(models.Model):
 class Tutorial(models.Model):
     youtubeLink = models.URLField()
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=1000)
+    description = models.TextField(max_length=1000)
 
     def __str__(self):
         return str(self.title)
@@ -44,7 +44,7 @@ class Coin(models.Model):
 # Model used to buy coins
 class BuyCoins(models.Model):
     customerName = models.CharField(max_length=100)
-    qty = models.IntegerField(default=0)
+    qty = models.FloatField(default=0)
     address = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     email = models.EmailField()

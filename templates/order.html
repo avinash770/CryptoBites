@@ -7,11 +7,18 @@
         <div class="single">
 
             <h1>Order a Coin</h1>
-            <h2> {{ note }}</h2>
+            <br>
+            <h2 style="color:#26fc2a;"> {{ note }}</h2>
+            <br>
             <form action="{% url 'order' %}" method="post">
                 {% csrf_token %}
                 <table>{{ buycoinsform.as_table }}</table>
-                <input type="submit" value="Place Order">
+                <br><br>
+
+
+                <input type="submit" value="Place Order" onclick="location.href='https://telr.com/payment-gateway/demo/';">
+
+
             </form>
 
 
