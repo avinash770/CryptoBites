@@ -10,6 +10,7 @@ class Recommended(models.Model):
     graphX = models.CharField(max_length=50, blank=True, default=0)
     graphY = models.CharField(max_length=50, blank=True, default=0)
 
+    #dunder method
     def __str__(self):
         return str(self.coin)
 
@@ -19,7 +20,8 @@ class Tutorial(models.Model):
     youtubeLink = models.URLField()
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
-
+    
+    #dunder method
     def __str__(self):
         return str(self.title)
 
@@ -29,6 +31,7 @@ class Testimonial(models.Model):
     name = models.CharField(max_length=50)
     feedback = models.TextField(max_length=1000)
 
+    #dunder method
     def __str__(self):
         return str(self.name)
 
@@ -37,6 +40,7 @@ class Testimonial(models.Model):
 class Coin(models.Model):
     name = models.CharField(max_length=100)
 
+    #dunder method
     def __str__(self):
         return self.name
 
@@ -50,5 +54,6 @@ class BuyCoins(models.Model):
     email = models.EmailField()
     name = models.ForeignKey(Coin, on_delete=models.CASCADE)
 
+    #dunder method
     def __str__(self):
         return self.customerName
