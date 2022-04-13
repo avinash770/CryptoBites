@@ -55,15 +55,14 @@ def order(request):
         form = BuyCoinsForm()
         return render(request, 'order.html', {'buycoinsform': form})
 
-
+#for the recommendation page
 def recommendation(request):
     return render(request, 'recommendations.html')
 
-
+#for the testimonial page
 def testimonial(request):
     data = Testimonial.objects.all()
     return render(request, 'testimonials.html', {'data': data})
-
 
 def aboutus(request):
     return render(request, 'aboutus.html')
