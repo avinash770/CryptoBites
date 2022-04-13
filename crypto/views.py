@@ -13,7 +13,7 @@ def index(request):
         '&sparkline=false').json()
     return render(request, 'index.html', {'apidata': apidata})
 
-
+# This is used for registration of new users
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -31,12 +31,12 @@ def register(request):
     context = {'form': form.as_p()}
     return render(request, 'registration/register.html', context)
 
-
+#This is used for the fetching data from the DB for tutotials page
 def tutorial(request):
     data = Tutorial.objects.all()
     return render(request, 'tutorial.html', {'data': data})
 
-
+#to order coins
 def order(request):
     if request.method == 'POST':
         filled_form = BuyCoinsForm(request.POST)
